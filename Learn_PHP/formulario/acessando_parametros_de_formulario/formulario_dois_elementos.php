@@ -4,7 +4,7 @@ print <<<_HTML_
 <input type="text" name"product_id">
 <select name="category">
 <option value="ovenmitt">Post Holder</option>
-<option value="torch">Kichen Torch</option>
+<option value="torch">Kitchen Torch</option>
 </select>
 <input type="submit" name="submit">
 </form>

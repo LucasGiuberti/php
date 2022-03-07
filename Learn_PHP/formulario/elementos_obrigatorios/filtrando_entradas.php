@@ -1,5 +1,5 @@
 <?php
-// Filtrando entradas compostas spor inteiros
+// Filtrando entradas compostas por inteiros
 
 // INT
 $ok = filter_input(INPUT_POST,'age', FILTER_VALIDATE_INT);

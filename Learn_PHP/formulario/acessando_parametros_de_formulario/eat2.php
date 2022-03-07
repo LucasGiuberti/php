@@ -15,7 +15,7 @@ Selected buns:
 <br/>
 _HTML_;
 if(isset($_POST['lunch'])){
-    foreach ($_POST['lunch'] as $choise){
-        print "You want a $choise bun. <br/>";
+    foreach ($_POST['lunch'] as $choice){
+        print "You want a $choice bun. <br/>";
     }
 }

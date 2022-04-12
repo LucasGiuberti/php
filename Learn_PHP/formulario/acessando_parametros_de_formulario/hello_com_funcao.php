@@ -1,6 +1,5 @@
 <?php
-//Lógica para a execução da ação correta de acordo com
-// o método solicitado
+//Lógica para a execução da ação correta de acordo com o método solicitado
 if ($_SERVER['REQUEST_METHOD'] == 'POST'){
     process_form();
 } else {

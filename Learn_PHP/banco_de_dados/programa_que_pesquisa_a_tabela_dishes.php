@@ -68,7 +68,7 @@ function process_form($input){
   // Constrói a consulsta
   $sql='SELECT dish_name, price, is_spicy FROM dishes WHERE price>=? AND price <=?';
   // Se um nome prato for enviado, adiciona à cláusula WHERE.
-  // Usamos quote() e strtr() para impedor que curingas inseridos pelo
+  // Usamos quote() e strtr() para impedir que curingas inseridos pelo
   // usuário funcionem
   if (strlen($input['dish_name'])){
     $dish=$db->quote($input['dish_name']);
@@ -76,7 +76,7 @@ function process_form($input){
     $sql.="AND dish_name LIKE $dish";
   }
   // se is_spicy for "yes" ou "no", adiciona o código SQL apropriado
-  // (se for "either", n~a'preceisamos adicionar is_spicy à cláusula WHERE)
+  // (se for "either", não preceisamos adicionar is_spicy à cláusula WHERE)
   $spicy_choise = $GLOBALS['spicy_choices'][$input['is_spicy']];
   if($spicy_choise == 'yes'){
     $sql.= 'AND is_spicy = 1';
@@ -84,11 +84,11 @@ function process_form($input){
     $sql.='AND is_spicy = 0';
      }
      //Envia a consulta ao programa de banco de dados e obtém todas as linhas
-     $stmt = $db-> prerare($sql);
+     $stmt = $db-> prepare($sql);
      $stmt-> execute(array($input['min_price'], $input['max_price']));
      $dishes = $stmt -> fetchAll();
      if (count($dishes)== 0) {
-       print 'no  dishes matched.';
+       print 'no dishes matched.';
      }else{
        print'<table>';
        print'<tr><th>Dish Name</th><th>Price</th><th>Scicy?</th></tr>';

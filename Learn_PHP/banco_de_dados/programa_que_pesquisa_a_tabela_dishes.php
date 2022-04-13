@@ -92,6 +92,13 @@ function process_form($input){
      }else{
        print'<table>';
        print'<tr><th>Dish Name</th><th>Price</th><th>Scicy?</th></tr>';
-       
+       foreach ($dish->is_spicy ==1){
+         $spicy = 'Yes';
+       }else{
+         $spicy = 'No';
+       }
+       printf('<tr><td>%s</td><td>$%.20f</td><td><td>%</td</tr>;',
+       htmlentities($dish->dish_name), $dish->price, $spicy);
      }
+}
 }

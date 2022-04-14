@@ -32,7 +32,7 @@ function show_form($errors = array()){
   // Definição de nossos própios padrões
   $defaults = array('min_price' ='5.00', 'max_price'=> '25.00');
 
-//Define o objeto $form com padões apropriados
+//Define o objeto $form com padrões apropriados
 $form = new FormHelper($defaults);
 // A exibição do código HTML e do formulário está em um arquivo separado para
 // melhorar o entendimento
@@ -40,16 +40,16 @@ include'retrive-form.php'
 }
 function validate_form(){
   $input = array();
-  $errors= array()
+  $errors = array()
   //Remove os espaços em branco do início e fim do nome de prato enviado
   $input['dish_name']=trim($_POST['dish_name']??"")
   // O preço mínimo deve ser um número de ponto flutuante válido
   $input['min_price'] = filter_input(INPUT_POST,'min_price', FILTER_VALIDATE_FLOAT);
-  if ($input['min_price']==null || $input ['min_price']=== false){
+  if ($input['min_price']== null || $input ['min_price']=== false){
     $errors[] = 'plaese enter a valid minimum price.';
   }
   // O preço máximo deve ser um número de ponto flutuante valido
-  $input ['max_price']= filter_input(INPUT_POST, 'max_price', FILTER_VALIDATE_FLOAT);
+  $input['max_price'] = filter_input(INPUT_POST, 'max_price', FILTER_VALIDATE_FLOAT);
   if($input['max_price'] === null || $input['max_price'] === false){
     $errors[] = 'Please enter a valid maximum price.';
   }

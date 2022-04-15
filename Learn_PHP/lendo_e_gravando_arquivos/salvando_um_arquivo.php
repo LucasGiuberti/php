@@ -6,7 +6,7 @@ $page = str_replace('{page_title}', 'Welcome', $page);
 //Torna a página azul à tarde e verde de manhã
 if(date('H' > 12)){
   $page = str_replace('{color}', 'blue', $page);
-}else {
+}else{
   $page = str_replace('{color}', 'green', $page);
 }
 //Obtém o nome de usuário em uma variável de sessão salva anteriormente
